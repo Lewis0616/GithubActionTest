@@ -28,4 +28,10 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: ls > files.txt
-
+    
+      - name: Use file names
+        run: |
+          while IFS= read -r file; do
+            echo "File: $file"
+            # 在这里执行你的操作，使用文件名
+            done < files.txt
